@@ -10,6 +10,11 @@ def keyPressForTime(holdTime,key):
     while time.time() - startTime < holdTime and ifMapOnScreen:
         ifMapOnScreen = pyautogui.pixelMatchesColor(1257,23,cyan)
     pyautogui.keyUp(key)
+    #debugging
+    if ifMapOnScreen:
+        print("map is still on screen")
+    else:
+        print("map is out")   
     return ifMapOnScreen
 
 
@@ -36,24 +41,30 @@ if __name__ == "__main__":
             print("Thats not R u retard!!")
             print("Im done. Rage quitting")
             time.sleep(2)
-        
-        while AMRun and programRun:
+        mapStillOnScreen = True
+        while AMRun and programRun and mapStillOnScreen:
             #press b to stop move
             try:
                 if keyboard.is_pressed('b'):
+                    print("b is pressed")
                     AMRun = False
             except:
-<<<<<<< HEAD
                 print("b not pressed")
-=======
-                print("do nothing")
->>>>>>> testBranch
                 #do nothing just catchin error
-            mapStillOnScreen = True
-            if mapStillOnScreen:
-                mapStillOnScreen = keyPressForTime(holdTime,'d')
-                mapStillOnScreen = keyPressForTime(holdTime,'s')
-                mapStillOnScreen = keyPressForTime(holdTime,'a')
-                mapStillOnScreen = keyPressForTime(holdTime,'w')
-            else:
+            
+            mapStillOnScreen = keyPressForTime(holdTime,'d')
+            if not mapStillOnScreen:
                 AMRun = False
+                break 
+            mapStillOnScreen = keyPressForTime(holdTime,'s')
+            if not mapStillOnScreen:
+                AMRun = False
+                break 
+            mapStillOnScreen = keyPressForTime(holdTime,'a')
+            if not mapStillOnScreen:
+                AMRun = False
+                break 
+            mapStillOnScreen = keyPressForTime(holdTime,'w')
+            if not mapStillOnScreen:
+                AMRun = False
+                break 
