@@ -39,21 +39,22 @@ if __name__ == "__main__":
     time.sleep(1)
     print("Started")
 
-    a = keyGenerator()
+    keyIterator = keyGenerator()
     while True:
         mapOnScreen = checkMapOnScreen()
         if mapOnScreen:
             print("Map found. Looping")
             for i in range(4):
                 try:
-                    key = next(a)
+                    key = next(keyIterator)
                 except StopIteration:
-                    a = keyGenerator()
-                    key = next(a)
+                    keyIterator = keyGenerator()
+                    key = next(keyIterator)
                 
                 mapOnScreen = keyPressForTime(holdTime,key)
                 print("clicking key "+ str(key))
 
                 if not mapOnScreen:
+                    print("In fight, AutoMovement paused")
                     break
         
