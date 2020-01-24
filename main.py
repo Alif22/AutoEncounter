@@ -6,7 +6,7 @@ cyan = (60,232,233)
 def keyPressForTime(holdTime,key):
     startTime = time.time()
     ifMapOnScreen = True
-    while time.time() - start < holdTime and ifMapOnScreen:
+    while time.time() - startTime < holdTime and ifMapOnScreen:
         ifMapOnScreen = pyautogui.pixelMatchesColor(1257,23,cyan)
         pyautogui.press(key)
     return ifMapOnScreen
