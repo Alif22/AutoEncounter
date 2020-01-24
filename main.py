@@ -40,6 +40,7 @@ if __name__ == "__main__":
                 if keyboard.is_pressed('b'):
                     AMRun = False
             except:
+                print("b not pressed")
                 #do nothing just catchin error
             mapStillOnScreen = True
             if mapStillOnScreen:
@@ -47,5 +48,5 @@ if __name__ == "__main__":
                 mapStillOnScreen = keyPressForTime(holdTime,'s')
                 mapStillOnScreen = keyPressForTime(holdTime,'a')
                 mapStillOnScreen = keyPressForTime(holdTime,'w')
-            else
+            else:
                 AMRun = False
