@@ -20,7 +20,7 @@ def keyPressForTime(holdTime,key):
 
 if __name__ == "__main__":
     #TODO get hold time from a txt file
-    holdTime = 1
+    holdTime = 0.5
     programRun = True
     while programRun:
         Input = input("Enter r to run program:")
