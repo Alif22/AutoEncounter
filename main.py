@@ -30,13 +30,11 @@ if __name__ == "__main__":
     holdTime = 0.4
     mapOnScreen = True
     print("running the program in 3 seconds. Click your game")
+
     time.sleep(1)
-    print("1")
-    time.sleep(1)
-    print("2")
-    time.sleep(1)
-    print("3")
-    time.sleep(1)
+    for i in range(3):
+        print(str(i+1))
+        time.sleep(1)
     print("Started")
 
     keyIterator = keyGenerator()
