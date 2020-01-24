@@ -21,7 +21,7 @@ def checkMapOnScreen():
 
 if __name__ == "__main__":
     #TODO get hold time from a txt file
-    holdTime = 0.5
+    holdTime = 0.4
     mapOnScreen = True
     print("running the program in 5 seconds. Click your game")
     time.sleep(1)
@@ -44,7 +44,7 @@ if __name__ == "__main__":
                 mapOnScreen = keyPressForTime(holdTime,keySequence[i])
                 i += 1
                 if not mapOnScreen:
-                    temp = i-1
-                    print("temp value " + str(temp))
+                    #temp = i-1
+                    #print("temp value " + str(temp))
                     break
                  
