@@ -3,14 +3,14 @@ import pyautogui
 import keyboard
 
 cyan = (60,232,233)
-def keyPressForTime(holdTime,key){
+def keyPressForTime(holdTime,key):
     startTime = time.time()
     ifMapOnScreen = True
     while time.time() - start < holdTime and ifMapOnScreen:
         ifMapOnScreen = pyautogui.pixelMatchesColor(1257,23,cyan)
         pyautogui.press(key)
     return ifMapOnScreen
-}
+
 
 if __name__ == "__main__":
     #TODO get hold time from a txt file
