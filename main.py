@@ -3,6 +3,9 @@ import pyautogui
 
 cyan = (60,232,233)
 keySequence = ['d', 's', 'a','w']
+x,y = pyautogui.size()
+x = round(x * 0.9202)
+y = round(y * 0.0299)
 
 def keyPressForTime(holdTime,key):
     startTime = time.time()
@@ -16,7 +19,7 @@ def keyPressForTime(holdTime,key):
     return isMapOnScreen
 
 def checkMapOnScreen():
-    isMapOnScreen = pyautogui.pixelMatchesColor(1257,23,cyan)
+    isMapOnScreen = pyautogui.pixelMatchesColor(x,y,cyan)
     return isMapOnScreen
 
 def keyGenerator():
